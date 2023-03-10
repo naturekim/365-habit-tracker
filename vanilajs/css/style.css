@@ -102,35 +102,17 @@ header {
 }
 
 .item {
-    font-family: 'LINESeedKR-Th';
     margin: 20px 3px;
 }
 
 .item > p {
+    font-family: 'LINESeedKR-Rg';
     font-size: 0.7rem;
-    font-weight: bold;
     text-align: center;
     margin: 0px;
     border-bottom: 1px solid var(--dgreen-color);
     /* 1px과 2px사이의 굵기가 필요함... border-image이용 또는 border-color: rgba 투명도 이용 */
     padding: 0px 0px 1px 0px;
-}
-
-.item > button {
-    margin: 3px 0px 0px 0px;
-    width: 33px;
-    height: 20px;
-    background: transparent;
-    border: 1px solid var(--dgreen-color);
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: var(--dgreen-color);
-}
-
-.item > button:hover {
-    background-color: var(--dgreen-color);
-    cursor: pointer;
-    /* 체크박스로 헤야할듯 */
 }
 
 .mr-10 {
@@ -148,3 +130,26 @@ footer {
     margin: 20px 0px;
 }
 
+/* ===== Checkbox Styles ===== */
+.item > input[type="checkbox"] {
+    display: none;
+}
+
+.item > input[type="checkbox"] + label {
+    /* user-select: none; */
+    cursor: pointer;
+    display: inline-block;
+    margin: 3px 0px 0px 0px;
+    width: 33px;
+    height: 20px;
+    border: 1px solid var(--dgreen-color);    
+    font-family: 'LINESeedKR-Rg';
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 20px;
+    color: var(--dgreen-color);
+}
+
+.item > input[type="checkbox"]:checked + label {
+    background-color: var(--dgreen-color);
+}
