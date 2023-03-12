@@ -12,33 +12,29 @@
     <script defer src="js/tracker.js"></script>
 </head>
 
-<body>
+<body class="preload">
     <!-- Header -->
     <header>
-        <div>
+        <div id="goal-box">
             <div class="input-box">
                 <h3>목표</h3><span>기상러닝</span>
             </div>
-            <div class="flex-between">
-                <div class="input-box">
-                    <h3>시작일</h3><span>2023.02.28(금)</span>
-                </div>
-                <div class="input-box">
-                    <h3>종료일</h3><span>2024.02.27(금)</span>
-                </div>
+            <div class="input-box">
+                <h3>시작일</h3><span class="highlight">2023.02.28(금)</span><span class="badge">60일째</span>
+            </div>
+            <div class="input-box">
+                <h3>종료일</h3><span class="highlight">2024.02.27(금)</span>
             </div>
         </div>
-        <div class="flex-align-center">
-            <div id="encourage-box"><span>🏃‍♂️ 잠깐 멈췄더라도 다시 하는게 중요해요!</span></div>
+        <div id="encourage-box">
+            <div><span class="lineUp">🏃‍♂️ 잠깐 멈췄더라도 다시 하는게 중요해요!</span></div>
         </div>
     </header>
-
     <!-- Main -->
-    <main id="tracker-box" class="tracker-box">
+    <main id="tracker-box" class="fade-in">
     </main>
-
     <!-- Footer -->
-    <footer class="flex-between">
+    <footer>
         <p>CONTACT_&nbsp;&nbsp;jiwhaja.gmail.com</p>
         <p>Copyright 2023. JIWHAJA. All rights Reserved</p>
     </footer>

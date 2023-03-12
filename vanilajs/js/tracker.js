@@ -1,4 +1,6 @@
 let startDate = new Date("2023-02-28");
+let today = new Date();
+
 let ckdList = [];
 const items = document.getElementById("tracker-box");
 const CKD_LIST = "ckdlist";
