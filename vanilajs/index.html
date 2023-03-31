@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -10,32 +10,61 @@
     <title>365 Habbit Tracker</title>
     <script defer src="js/quote.js"></script>
     <script defer src="js/tracker.js"></script>
+    <script src="https://kit.fontawesome.com/be598d20e9.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="preload">
+    <!-- Modal -->
+    <dialog id="goal-modal">
+        <form id="goal-form" method="dialog">
+            <header>
+                <h3>목표설정</h3>
+                <button class="btn"><i class="fa-solid fa-xmark"></i></button>
+            </header>
+            <main>
+                <label for="goalInput">목표</label>
+                <input type="text" id="goalInput">
+                <label for="startInput">시작일</label>
+                <input type="date" id="startInput">
+                <span id="modifyMessage"><i class="fa-solid fa-circle-exclamation"></i>&nbsp;시작일 변경 시 트래커가
+                    초기화됩니다.</span>
+                <span id="alertMessage"></span>
+            </main>
+        </form>
+        <footer>
+            <button id="goalSubmitBtn">✔ 저장</button><br>
+        </footer>
+    </dialog>
+
     <!-- Header -->
     <header>
         <div id="goal-box">
             <div class="input-box">
-                <h3>목표</h3><span class="highlight">기상러닝</span>
+                <h3>목표</h3><span id="goal" class="highlight"></span>
             </div>
             <div class="input-box">
-                <h3>시작일</h3><span class="highlight">2023.02.28(금)</span><span class="badge">60일째</span>
+                <h3>시작일</h3><span id="start" class="highlight"></span>
+                <span id="period" class="badge"></span>
             </div>
             <div class="input-box">
-                <h3>종료일</h3><span class="highlight">2024.02.27(금)</span>
+                <h3>종료일</h3><span id="end" class="highlight"></span>
             </div>
         </div>
         <div id="encourage-box">
-            <div><span class="lineUp">🏃‍♂️ 잠깐 멈췄더라도 다시 하는게 중요해요!</span></div>
+            <div><span class="lineUp"></span></div>
         </div>
     </header>
+
     <!-- Main -->
     <main id="tracker-box" class="fade-in">
     </main>
+
     <!-- Footer -->
     <footer>
-        <p>CONTACT_&nbsp;&nbsp;jiwhaja.gmail.com</p>
+        <address>
+            <span>CONTACT_&nbsp;&nbsp;</span>
+            <span>jiwhaja.gmail.com</span>
+        </address>
         <p>Copyright 2023. JIWHAJA. All rights Reserved</p>
     </footer>
 </body>

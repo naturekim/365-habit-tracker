@@ -20,10 +20,14 @@
 :root {
   /* Color */
   --white-color: white;
-  --yellow-color: #e1eedd;
-  --green-color: #7db9b6;
   --ivory-color: #fefbe9;
-  --dgreen-color: #183a1d;
+  --lgreen-color: #e1eedd;
+  --green-color: #7db9b6;
+  --dgreen-color: #578381;
+  --ddgreen-color: #183a1d;
+  --lred-color: rgb(250, 234, 235);
+  --red-color: rgb(189, 3, 3);
+  --dred-color: rgb(160, 3, 3);
 }
 
 * {
@@ -35,22 +39,13 @@ body {
   height: 100%;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(var(--yellow-color), var(--green-color));
   padding: 0% 3%;
+  background: linear-gradient(var(--lgreen-color), var(--green-color));
   font-family: "LINESeedKR-Rg";
 }
 
-/*  CSS Transition Only After Onload */
-.preload {
-  transition: none !important;
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
-}
-
 header {
-  margin: 2% 0%;
+  margin: 2% 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -59,29 +54,31 @@ header {
 /* ===== Goal Style ===== */
 #goal-box {
   display: flex;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
 
 #goal-box .input-box {
   display: flex;
   align-items: center;
-  margin: 0px 5px;
-  padding: 0px 7px;
-  border-bottom: 0.2rem solid var(--dgreen-color);
+  height: 38px;
+  margin: 1% 10px;
+  padding: 0 7px;
+  border-bottom: 0.2rem solid var(--ddgreen-color);
 }
+
 #goal-box .input-box > h3 {
   font-size: 1rem;
   font-family: "LINESeedKR-Bd";
-  display: inline;
   padding-right: 1rem;
 }
 
 .badge {
-  background-color: rgb(250, 234, 235);
-  padding: 8px;
-  margin: 0px 7px;
+  background-color: var(--lred-color);
+  padding: 7px;
+  margin: 5px 7px;
   border-radius: 2em;
-  color: rgb(189, 3, 3);
+  color: var(--red-color);
   font-size: 0.8rem;
   font-weight: normal;
   display: flex;
@@ -102,9 +99,16 @@ header {
 /* ===== Encoraging Style ===== */
 #encourage-box {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
+/* 
+@media (minwidth > ) {
+  
+}
+#encourage-box {
+    margin: 2% 0;
+    padding: 0 7px;
+} */
 
 #encourage-box div {
   background-color: var(--white-color);
@@ -112,7 +116,7 @@ header {
   border-radius: 3px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 255, 0.2);
   font-style: italic;
-  color: var(--dgreen-color);
+  color: var(--ddgreen-color);
 }
 
 /* ===== tracker-box styles =====  */
@@ -120,24 +124,27 @@ header {
   display: flex;
   flex-wrap: wrap;
   background: var(--ivory-color);
-  border: 2px solid var(--dgreen-color);
+  border: 2px solid var(--ddgreen-color);
   border-radius: 20px;
   padding: 1.5%;
 }
 
-#tracker-box .tracker-start-end {
-  display: flex;
-  align-items: center;
+#tracker-box::before {
+  margin-right: 2%;
+  content: "START";
   font-family: "LINESeedKR-Bd";
   font-size: 1.3rem;
+  display: flex;
+  align-items: center;
 }
 
-.mr-10 {
-  margin-right: 2%;
-}
-
-.ml-10 {
+#tracker-box::after {
   margin-left: 2%;
+  content: "CONGRATS🎉";
+  font-family: "LINESeedKR-Bd";
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
 }
 
 #tracker-box .item {
@@ -149,7 +156,7 @@ header {
   font-size: 0.7rem;
   text-align: center;
   margin: 0px;
-  border-bottom: 1px solid var(--dgreen-color);
+  border-bottom: 1px solid var(--ddgreen-color);
   padding: 0px 0px 1px 0px;
 }
 
@@ -165,20 +172,20 @@ header {
   margin: 3px 0px 0px 0px;
   width: 33px;
   height: 20px;
-  border: 1px solid var(--dgreen-color);
+  border: 1px solid var(--ddgreen-color);
   font-family: "LINESeedKR-Rg";
   font-size: 0.8rem;
   text-align: center;
   line-height: 20px;
-  color: var(--dgreen-color);
+  color: var(--ddgreen-color);
 }
 
 #tracker-box .item > input[type="checkbox"] + label:hover {
-  background: var(--dgreen-color);
+  background: var(--ddgreen-color);
 }
 
 #tracker-box .item > input[type="checkbox"]:checked + label {
-  background-color: var(--dgreen-color);
+  background-color: var(--ddgreen-color);
 }
 
 /* ===== Footer Styles ===== */
@@ -188,6 +195,15 @@ footer {
   color: var(--ivory-color);
   font-size: 0.7rem;
   margin: 20px 0px;
+}
+
+/*  CSS Transition Only After Onload */
+.preload {
+  transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
 }
 
 /* ===== Transition ===== */
@@ -253,4 +269,90 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+/* form */
+input {
+  font-family: "LINESeedKR-Rg";
+  border-style: none;
+  padding: 9px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 10px;
+  background-color: var(--lgreen-color);
+}
+
+input:focus {
+  outline: none !important;
+  border: solid 2px var(--ddgreen-color);
+}
+
+button {
+  font-family: "LINESeedKR-Rg";
+  border-style: none;
+  padding: 9px 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin: 0 10px;
+  background-color: var(--dgreen-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--ddgreen-color);
+}
+
+.blind {
+  display: none;
+}
+
+/* dialog */
+
+dialog {
+  border-style: none;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+  padding: 0;
+}
+
+button.btn {
+  all: unset;
+  display: inline;
+  cursor: pointer;
+}
+
+dialog header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  font-weight: bold;
+}
+
+dialog main {
+  padding: 20px;
+  border-top: 1px solid rgb(233, 232, 232);
+  /* border-bottom: 1px solid rgb(233, 232, 232); */
+  display: flex;
+  flex-direction: column;
+}
+
+#modifyMessage {
+  padding: 0px 10px;
+  font-size: 0.9rem;
+  color: rgb(110, 110, 110);
+}
+
+#alertMessage {
+  color: rgb(159, 24, 24);
+  font-size: 0.9rem;
+  padding: 0px 10px;
+  margin: 20px 0 0 0;
+}
+
+dialog footer {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: row-reverse;
 }
