@@ -59,7 +59,11 @@ function paintTracker(startVal, chklist) {
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
     const day = ("0" + date.getDate()).slice(-2);
     const dateString = month + "/" + day;
-    p.innerText = dateString;
+    if (i % 7 === 0) {
+      p.innerText = dateString;
+    } else {
+      p.innerHTML = "&nbsp;";
+    }
     date.setDate(date.getDate() + 1);
 
     const cbox = document.createElement("input");
@@ -74,6 +78,12 @@ function paintTracker(startVal, chklist) {
       const savedChklist = JSON.parse(localStorage.getItem(CHKLIST));
       savedChklist[e.target.value] = e.target.checked;
       localStorage.setItem(CHKLIST, JSON.stringify(savedChklist));
+
+      if (e.target.checked) {
+        const suceed = savedChklist.filter((suceed) => suceed === true);
+        const total = period.innerText.slice(0, -1);
+        alert(`좋아요👍 오늘까지 ${total} 중 ${suceed.length}일 성공했어요✨`);
+      }
     });
 
     const label = document.createElement("label");
