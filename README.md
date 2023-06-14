@@ -12,7 +12,8 @@
 <br />
 
 # Preview
-![365-habbit-tracker]()
+![preview_365-habit-tracker](https://github.com/naturekim/365-habit-tracker/assets/66105089/d1850ab0-c79c-4446-b260-99a65230406b)
+
 <br />
 
 # Stacks
